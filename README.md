@@ -1,5 +1,7 @@
 <h1><img src="https://github.com/elixir-nx/livebook/raw/main/priv/static/logo-with-text.png" alt="Livebook" width="400"></h1>
 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/wojtekmach/livebook_fork/tree/wm-heroku)
+
 Livebook is a web application for writing interactive and collaborative code notebooks. It features:
 
   * A deployable web app built with [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view)

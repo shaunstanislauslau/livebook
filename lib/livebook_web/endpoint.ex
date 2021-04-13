@@ -43,6 +43,8 @@ defmodule LivebookWeb.Endpoint do
       gzip: false
   end
 
+  plug :auth
+
   plug LivebookWeb.StaticPlug,
     at: "/",
     file_provider: AssetsMemoryProvider,
@@ -68,4 +70,12 @@ defmodule LivebookWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug LivebookWeb.Router
+
+  defp auth(conn, _params) do
+    if password = Application.get_env(:livebook, :auth_password) do
+      Plug.BasicAuth.basic_auth(conn, username: "app", password: password)
+    else
+      conn
+    end
+  end
 end
